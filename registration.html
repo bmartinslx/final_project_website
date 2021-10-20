@@ -1,0 +1,1240 @@
+<html>
+  <head>
+    <title>Form Demo</title>
+    <style>
+      .first_name.ng-valid {
+        background-color: lightgreen;
+      }
+
+      .first_name.ng-dirty.ng-invalid-required {
+        background-color: red;
+      }
+
+      .first_name.ng-dirty.ng-invalid-minlength {
+        background-color: yellow;
+      }
+
+      .last_name.ng-valid {
+        background-color: lightgreen;
+      }
+
+      .last_name.ng-dirty.ng-invalid-required {
+        background-color: red;
+      }
+
+      .last_name.ng-dirty.ng-invalid-minlength {
+        background-color: yellow;
+      }
+
+      .phone.ng-valid {
+        background-color: lightgreen;
+      }
+
+      .phone.ng-dirty.ng-invalid-required {
+        background-color: red;
+      }
+
+      .phone.ng-dirty.ng-invalid-minlength {
+        background-color: yellow;
+      }
+
+      .city.ng-valid {
+        background-color: lightgreen;
+      }
+
+      .city.ng-dirty.ng-invalid-required {
+        background-color: red;
+      }
+
+      .city.ng-dirty.ng-invalid-minlength {
+        background-color: yellow;
+      }
+
+      .state.ng-valid {
+        background-color: lightgreen;
+      }
+
+      .state.ng-dirty.ng-invalid-required {
+        background-color: red;
+      }
+
+      .state.ng-dirty.ng-invalid-minlength {
+        background-color: yellow;
+      }
+
+      .zip.ng-valid {
+        background-color: lightgreen;
+      }
+
+      .zip.ng-dirty.ng-invalid-required {
+        background-color: red;
+      }
+
+      .zip.ng-dirty.ng-invalid-minlength {
+        background-color: yellow;
+      }
+
+      .emailemail.ng-valid {
+        background-color: lightgreen;
+      }
+
+      .email.ng-dirty.ng-invalid-required {
+        background-color: red;
+      }
+
+      .email.ng-dirty.ng-invalid-email {
+        background-color: yellow;
+      }
+
+      .password.ng-valid {
+        background-color: lightgreen;
+      }
+
+      .password.ng-dirty.ng-invalid-required {
+        background-color: red;
+      }
+
+      .password.ng-dirty.ng-invalid-minlength {
+        background-color: yellow;
+      }
+
+      /*comment*/
+
+      .comment.ng-valid {
+        background-color: lightgreen;
+      }
+
+      .comment.ng-dirty.ng-invalid-required {
+        background-color: red;
+      }
+
+      .comment.ng-dirty.ng-invalid-minlength {
+        background-color: yellow;
+      }
+    </style>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round|Open+Sans"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css"
+    />
+    <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ng-table/1.0.0/ng-table.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ng-table/1.0.0/ng-table.js"></script>-->
+
+    <link rel="stylesheet" href="app.css" />
+
+    <style type="text/css">
+      table.table td a {
+        cursor: pointer;
+        display: inline-block;
+        margin: 0 5px;
+        min-width: 24px;
+      }
+
+      table.table td a.add {
+        color: #27c46b;
+      }
+
+      table.table td a.edit {
+        color: #ffc107;
+      }
+
+      table.table td a.delete {
+        color: #e34724;
+      }
+
+      table.table td i {
+        font-size: 20px;
+      }
+      #panel-heading {
+        background-color: rgb(255, 240, 240);
+      }
+      #img-angular {
+        width: 600px;
+        height: 300px;
+        margin-left: 650px;
+      }
+    </style>
+  </head>
+  <body ng-app="myApp">
+    <div class="generic-container" ng-controller="AppController as ctrl">
+      <div class="panel panel-default">
+        <div id="panel-heading">
+          <img
+            id="img-angular"
+            src="img/angular1.png"
+            alt="angular"
+            href="../index.html"
+          />
+          <br />
+          <span class="lead" style="color: red;"> User Registration Form </span>
+        </div>
+        <div class="formcontainer">
+          <form ng-submit="ctrl.submit()" name="myForm" class="form-horizontal">
+            <input type="hidden" ng-model="ctrl.student.id" />
+
+            <div class="row">
+              <div class="form-group col-md-12">
+                <label class="col-md-2 control-lable" for="first_name"
+                  >First Name</label
+                >
+                <div class="col-md-7">
+                  <input
+                    type="text"
+                    ng-model="ctrl.student.first_name"
+                    id="first_name"
+                    class="first_name form-control input-sm"
+                    placeholder="Enter your first name"
+                    required
+                    ng-minlength="3"
+                  />
+                  <div class="has-error" ng-show="myForm.$dirty">
+                    <span ng-show="myForm.first_name.$error.required"
+                      >First Name is a required</span
+                    >
+                    <span ng-show="myForm.first_name.$error.minlength"
+                      >Minimum length required is 3</span
+                    >
+                    <span ng-show="myForm.first_name.$invalid"
+                      >First Name is invalid
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="form-group col-md-12">
+                <label class="col-md-2 control-lable" for="last_name"
+                  >Last Name</label
+                >
+                <div class="col-md-7">
+                  <input
+                    type="text"
+                    ng-model="ctrl.student.last_name"
+                    id="last_name"
+                    class="last_name form-control input-sm"
+                    placeholder="Enter your last name"
+                    required
+                    ng-minlength="3"
+                  />
+                  <div class="has-error" ng-show="myForm.$dirty">
+                    <span ng-show="myForm.last_name.$error.required"
+                      >Last Name is a required</span
+                    >
+                    <span ng-show="myForm.last_name.$error.minlength"
+                      >Minimum length required is 3</span
+                    >
+                    <span ng-show="myForm.last_name.$invalid"
+                      >Last Name is invalid
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="form-group col-md-12">
+                <label class="col-md-2 control-lable" for="address"
+                  >Address</label
+                >
+                <div class="col-md-7">
+                  <input
+                    type="text"
+                    ng-model="ctrl.student.address"
+                    id="address"
+                    class="form-control input-sm"
+                    placeholder="Enter your Address. [This field is validation free]"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="form-group col-md-12">
+                <label class="col-md-2 control-lable" for="city">City</label>
+                <div class="col-md-7">
+                  <input
+                    type="text"
+                    ng-model="ctrl.student.city"
+                    id="city"
+                    class="city form-control input-sm"
+                    placeholder="Enter your city"
+                    required
+                    ng-minlength="3"
+                  />
+                  <div class="has-error" ng-show="myForm.$dirty">
+                    <span ng-show="myForm.city.$error.required"
+                      >City is a required</span
+                    >
+                    <span ng-show="myForm.city.$error.minlength"
+                      >Minimum length required is 3</span
+                    >
+                    <span ng-show="myForm.city.$invalid">City is invalid </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="form-group col-md-12">
+                <label class="col-md-2 control-lable" for="state">State</label>
+                <div class="col-md-7">
+                  <input
+                    type="text"
+                    ng-model="ctrl.student.state"
+                    id="state"
+                    class="state form-control input-sm"
+                    placeholder="Enter your state"
+                    required
+                    ng-minlength="3"
+                  />
+                  <div class="has-error" ng-show="myForm.$dirty">
+                    <span ng-show="myForm.state.$error.required"
+                      >This is a required field</span
+                    >
+                    <span ng-show="myForm.state.$error.minlength"
+                      >Minimum length required is 3</span
+                    >
+                    <span ng-show="myForm.state.$invalid"
+                      >This field is invalid
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="form-group col-md-12">
+                <label class="col-md-2 control-lable" for="zip">Zip</label>
+                <div class="col-md-7">
+                  <input
+                    type="text"
+                    ng-model="ctrl.student.zip"
+                    id="zip"
+                    class="zip form-control input-sm"
+                    placeholder="Enter your zip"
+                    required
+                    ng-minlength="3"
+                  />
+                  <div class="has-error" ng-show="myForm.$dirty">
+                    <span ng-show="myForm.zip.$error.required"
+                      >State is a required</span
+                    >
+                    <span ng-show="myForm.zip.$error.minlength"
+                      >Minimum length required is 3</span
+                    >
+                    <span ng-show="myForm.zip.$invalid">State is invalid </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="form-group col-md-12">
+                <label class="col-md-2 control-lable" for="email">Email</label>
+                <div class="col-md-7">
+                  <input
+                    type="email"
+                    ng-model="ctrl.student.email"
+                    id="email"
+                    class="email form-control input-sm"
+                    placeholder="Enter your email"
+                    required
+                  />
+                  <div class="has-error" ng-show="myForm.$dirty">
+                    <span ng-show="myForm.email.$error.required"
+                      >Email is a required</span
+                    >
+                    <span ng-show="myForm.email.$invalid"
+                      >Email is invalid
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="form-group col-md-12">
+                <label class="col-md-2 control-lable" for="password"
+                  >Password</label
+                >
+                <div class="col-md-7">
+                  <input
+                    type="text"
+                    ng-model="ctrl.student.password"
+                    id="password"
+                    class="password form-control input-sm"
+                    placeholder="Enter your password"
+                    required
+                    ng-minlength="8"
+                    ng-pattern="/^(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*#?&])[A-Za-z\d$@$!%*#?&]{8,20}$/"
+                  />
+                  <div class="has-error" ng-show="myForm.$dirty">
+                    <span ng-show="myForm.password.$error.required"
+                      >Password is a required</span
+                    >
+                    <span ng-show="myForm.password.$error.minlength"
+                      >Minimum length required is 3</span
+                    >
+                    <span ng-show="myForm.password.$invalid"
+                      >Password is invalid
+                    </span>
+                    <span ng-show="myForm.password.$error.pattern">
+                      Password should be at least 8 characters long and should
+                      contain one number,one character and one special character
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="form-group col-md-12">
+                <label class="col-md-2 control-lable" for="comment"
+                  >Comment</label
+                >
+                <div class="col-md-7">
+                  <input
+                    type="text"
+                    ng-model="ctrl.student.comment"
+                    id="comment"
+                    class="comment form-control input-sm"
+                    placeholder="Enter your Comment"
+                    required
+                    ng-minlength="3"
+                  />
+                  <div class="has-error" ng-show="myForm.$dirty">
+                    <span ng-show="myForm.comment.$error.required"
+                      >Comment is a required</span
+                    >
+                    <span ng-show="myForm.comment.$error.minlength"
+                      >Minimum length required is 3</span
+                    >
+                    <span ng-show="myForm.comment.$invalid"
+                      >Comment is invalid
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="form-actions floatRight">
+                <input
+                  type="submit"
+                  value="{{!ctrl.student.id ? 'Add' : 'Update'}}"
+                  class="btn btn-success btn-sm"
+                  ng-disabled="myForm.$invalid"
+                />
+                <button
+                  type="button"
+                  ng-click="ctrl.reset()"
+                  class="btn btn-warning btn-sm"
+                  ng-disabled="myForm.$pristine"
+                >
+                  Reset Form
+                </button>
+                <a class="btn btn-danger btn-sm" href="index.html">Go Back</a>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="panel panel-default">
+        <!-- Default panel contents -->
+        <div class="row" style="margin-top: 10px;">
+          <div class="col-md-2">
+            <div class="panel-heading">
+              <span class="lead" style="color: red;"
+                >List of Users in Database</span
+              >
+            </div>
+            <!-- Search form -->
+          </div>
+
+          <div class="col-md-2">
+            <div class="input-group">
+              <span class="input-group-btn">
+                <button
+                  type="button"
+                  class="btn btn-default btn-number"
+                  data-type="minus"
+                  data-field="quant[1]"
+                >
+                  <span class="glyphicon glyphicon-minus"></span>
+                </button>
+              </span>
+
+              <input
+                type="number"
+                id="rowCount"
+                step="1"
+                name="quant[1]"
+                class="form-control input-number"
+                value="1"
+                min="1"
+                max="100"
+                ng-model="rowCount"
+              />
+
+              <span class="input-group-btn">
+                <button
+                  type="button"
+                  class="btn btn-default btn-number"
+                  data-type="plus"
+                  data-field="quant[1]"
+                >
+                  <span class="glyphicon glyphicon-plus"></span>
+                </button>
+              </span>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="input-group">
+              <span class="input-group-addon"
+                ><i class="glyphicon glyphicon-search"></i
+              ></span>
+              <div class="form-group has-feedback has-clear">
+                <input
+                  type="text"
+                  class="form-control"
+                  id="searchTextBox"
+                  placeholder="Search"
+                  ng-model="searching"
+                />
+                <span
+                  id="clear-filter"
+                  ng-click="clearFilter()"
+                  class="form-control-clear glyphicon glyphicon-remove form-control-feedback hidden"
+                ></span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <style>
+          /* Clear button styles
+                --------------------------------------------- */
+
+          ::-ms-clear {
+            display: none;
+          }
+
+          .form-control-clear {
+            z-index: 10;
+            pointer-events: auto;
+            cursor: pointer;
+          }
+
+          /* Custom page CSS (Not required)
+                --------------------------------------------- */
+        </style>
+
+        <script>
+          /* Additional Script */
+          $('.has-clear input[type="text"]')
+            .on("input propertychange", function () {
+              var $this = $(this);
+              var visible = Boolean($this.val());
+              $this
+                .siblings(".form-control-clear")
+                .toggleClass("hidden", !visible);
+            })
+            .trigger("propertychange");
+        </script>
+
+        <!-- End Search form -->
+
+        <br />
+
+        <div class="tablecontainer">
+          <table
+            ng-table="tableStudents"
+            show-filter="true"
+            class="table table-striped table-bordered table-condensed table-hover"
+          >
+            <thead>
+              <tr>
+                <th><a href="" ng-click='predicate="id"'>ID</a></th>
+                <th><a href="" ng-click='predicate="first_name"'>First</a></th>
+                <th><a href="" ng-click='predicate="last_name"'>Last</a></th>
+                <th><a href="" ng-click='predicate="phone"'>phone</a></th>
+                <th><a href="" ng-click='predicate="address"'>Address</a></th>
+                <th><a href="" ng-click='predicate="city"'>City</a></th>
+                <th><a href="" ng-click='predicate="state"'>State</a></th>
+                <th><a href="" ng-click='predicate="zip"'>Zip</a></th>
+                <th><a href="" ng-click='predicate="email"'>Email</a></th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr
+                ng-repeat="student in ctrl.students | orderBy:predicate |limitTo:rowCount |filter:searching"
+              >
+                <td><span ng-bind="student.id"></span></td>
+                <td><span ng-bind="student.first_name"></span></td>
+                <td><span ng-bind="student.last_name"></span></td>
+                <td><span ng-bind="student.phone"></span></td>
+                <td><span ng-bind="student.address"></span></td>
+                <td><span ng-bind="student.city"></span></td>
+                <td><span ng-bind="student.state"></span></td>
+                <td><span ng-bind="student.zip"></span></td>
+                <td><span ng-bind="student.email"></span></td>
+                <td>
+                  <a
+                    class="edit"
+                    title="Edit"
+                    ng-click="ctrl.edit(student.id)"
+                    data-toggle="tooltip"
+                    ><i class="material-icons">&#xE254;</i></a
+                  >
+                  <a
+                    class="delete"
+                    title="Delete"
+                    ng-click="ctrl.remove(student.id)"
+                    data-toggle="tooltip"
+                    ><i class="material-icons">&#xE872;</i></a
+                  >
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <br />
+          <br />
+        </div>
+      </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular.js"></script>
+    <script>
+      var app = angular.module("myApp", []);
+      /*-------------------------------------------------------------------------------------*/
+      var recordsCount = 0;
+      app.factory("indexedDBDataSvc", function ($window, $q) {
+        var indexedDB = $window.indexedDB;
+        var db = null;
+        var lastIndex = 0;
+        const studentData = [
+          {
+            id: 1,
+            first_name: "Brok",
+            last_name: "Magill",
+            phone: "304-669-1488",
+            address: "47 Glacier Hill Place",
+            city: "Charleston",
+            state: "West Virginia",
+            zip: "25313",
+            comment: "",
+            email: "bmagill0@printfriendly.com",
+            password: "password123",
+          },
+          {
+            id: 2,
+            first_name: "Marlin",
+            last_name: "Waliszek",
+            phone: "843-988-7142",
+            address: "2357 MooseWay",
+            city: "Charleston",
+            state: "SouthCarolina",
+            zip: "29424",
+            comment: "",
+            email: "mwaliszek1@infoseek.co.jp",
+            password: "password123",
+          },
+          {
+            id: 3,
+            first_name: "Violetta",
+            last_name: "Benning",
+            phone: "209-367-5899",
+            address: "3630 Schurz Hill",
+            city: "Stockton",
+            state: "California",
+            zip: "95210",
+            comment: "",
+            email: "vbenning2@dell.com",
+            password: "password123",
+          },
+          {
+            id: 4,
+            first_name: "Rodolph",
+            last_name: "Dawley",
+            phone: "520-980-3485",
+            address: "75599 Paget Alley",
+            city: "Tucson",
+            state: "Arizona",
+            zip: "85748",
+            comment: "",
+            email: "rdawley3@1und1.de",
+            password: "password123",
+          },
+          {
+            id: 5,
+            first_name: "Sven",
+            last_name: "Worms",
+            phone: "505-783-9717",
+            address: "1Florence Court",
+            city: "Albuquerque",
+            state: "NewMexico",
+            zip: "87190",
+            comment: "",
+            email: "sworms4@stanford.edu",
+            password: "password123",
+          },
+          {
+            id: 6,
+            first_name: "Trueman",
+            last_name: "Bairstow",
+            phone: "316-943-5538",
+            address: "2 Barnett Point",
+            city: "Wichita",
+            state: "Kansas",
+            zip: "67215",
+            comment: "",
+            email: "tbairstow5@thetimes.co.uk",
+            password: "password123",
+          },
+          {
+            id: 7,
+            first_name: "Dirk",
+            last_name: "MacAnellye",
+            phone: "309-102-0391",
+            address: "590 Summit Circle",
+            city: "Peoria",
+            state: "Illinois",
+            zip: "61629",
+            comment: "",
+            email: "dmacanellye6@unesco.org",
+            password: "password123",
+          },
+          {
+            id: 8,
+            first_name: "Jobi",
+            last_name: "Matzen",
+            phone: "806-730-8742",
+            address: "12718 New Castle Parkway",
+            city: "Amarillo",
+            state: "Texas",
+            zip: "79188",
+            comment: "",
+            email: "jmatzen7@csmonitor.com",
+            password: "password123",
+          },
+          {
+            id: 9,
+            first_name: "Gabriello",
+            last_name: "Picford",
+            phone: "423-590-3952",
+            address: "2336 Ruskin Terrace",
+            city: "Kingsport",
+            state: "Tennessee",
+            zip: "37665",
+            comment: "",
+            email: "gpicford8@webeden.co.uk",
+            password: "password123",
+          },
+          {
+            id: 10,
+            first_name: "Meade",
+            last_name: "Gerasch",
+            phone: "813-106-5231",
+            address: "14191 Northport Plaza",
+            city: "Tampa",
+            state: "Florida",
+            zip: "33647",
+            comment: "",
+            email: "mgerasch9@howstuffworks.com",
+            password: "password123",
+          },
+        ];
+        var open = function () {
+          // create a new instance of deferred
+          var deferred = $q.defer();
+          var version = 1;
+          var request = indexedDB.open("studentsDatabase", version);
+
+          request.onupgradeneeded = function (e) {
+            db = e.target.result;
+
+            e.target.transaction.onerror = indexedDB.onerror;
+
+            if (db.objectStoreNames.contains("student")) {
+              db.deleteObjectStore("student");
+            }
+
+            //var objectStore = db.createObjectStore('student', { keyPath: 'id' });
+            var objectStore = db.createObjectStore("student", {
+              keyPath: "id",
+              autoIncrement: true,
+            });
+            objectStore.createIndex("first_name", "first_name", {
+              unique: false,
+            });
+            objectStore.createIndex("email", "email", { unique: true });
+
+            for (var i in studentData) {
+              objectStore.add(studentData[i]);
+            }
+          };
+
+          request.onsuccess = function (e) {
+            db = e.target.result;
+            deferred.resolve();
+          };
+
+          request.onerror = function () {
+            deferred.reject();
+          };
+
+          return deferred.promise;
+        };
+
+        var getStudents = function () {
+          var deferred = $q.defer();
+
+          if (db === null) {
+            deferred.reject("IndexDB is not opened yet!");
+          } else {
+            var trans = db.transaction(["student"], "readwrite");
+            var objectStore = trans.objectStore("student");
+            var students = [];
+
+            // Get everything in the objectStore;
+            var keyRange = IDBKeyRange.lowerBound(0);
+            var cursorRequest = objectStore.openCursor(keyRange);
+
+            cursorRequest.onsuccess = function (e) {
+              var result = e.target.result;
+              if (result === null || result === undefined) {
+                deferred.resolve(students);
+              } else {
+                students.push(result.value);
+                if (result.value.id > lastIndex) {
+                  lastIndex = result.value.id;
+                }
+                result.continue();
+              }
+            };
+
+            cursorRequest.onerror = function (e) {
+              console.log(e.value);
+              deferred.reject("Something went wrong!!!");
+            };
+          }
+
+          return deferred.promise;
+        };
+
+        var deleteStudent = function (id) {
+          var deferred = $q.defer();
+
+          if (db === null) {
+            deferred.reject("IndexDB is not opened yet!");
+          } else {
+            var trans = db.transaction(["student"], "readwrite");
+            var objectStore = trans.objectStore("student");
+
+            var request = objectStore.delete(id);
+
+            request.onsuccess = function (e) {
+              deferred.resolve();
+            };
+
+            request.onerror = function (e) {
+              console.log(e.value);
+              deferred.reject("Student item couldn't be deleted");
+            };
+          }
+
+          return deferred.promise;
+        };
+
+        var addStudent = function (
+          first_name,
+          last_name,
+          phone,
+          address,
+          city,
+          state,
+          zip,
+          email,
+          pass,
+          Comment
+        ) {
+          var deferred = $q.defer();
+
+          if (db === null) {
+            deferred.reject("IndexDB is not opened yet!");
+          } else {
+            var trans = db.transaction(["student"], "readwrite");
+            var objectStore = trans.objectStore("student");
+            lastIndex++;
+            var request = objectStore.put({
+              id: lastIndex,
+              first_name: first_name,
+              last_name: last_name,
+              phone: phone,
+
+              address: address,
+              city: city,
+              state: state,
+              zip: zip,
+              email: email,
+              comment: comment,
+              password: pass,
+            });
+
+            request.onsuccess = function (e) {
+              deferred.resolve();
+            };
+
+            request.onerror = function (e) {
+              console.log(e.value);
+              deferred.reject("Student item couldn't be added!!!");
+            };
+          }
+          return deferred.promise;
+        };
+
+        var editStudent = function (
+          id,
+          first_name,
+          last_name,
+          phone,
+          address,
+          city,
+          state,
+          zip,
+          email,
+          pass,
+          comment
+        ) {
+          var deferred = $q.defer();
+
+          if (db === null) {
+            deferred.reject("IndexDB is not opened yet!");
+          } else {
+            var trans = db.transaction(["student"], "readwrite");
+            var objectStore = trans.objectStore("student");
+
+            var request = objectStore.put({
+              id: id,
+              first_name: first_name,
+              last_name: last_name,
+              phone: phone,
+              address: address,
+              city: city,
+              state: state,
+              zip: zip,
+              email: email,
+              password: pass,
+              comment: comment,
+            });
+
+            request.onsuccess = function (e) {
+              deferred.resolve();
+            };
+
+            request.onerror = function (e) {
+              console.log(e.value);
+              deferred.reject("Student item couldn't be added!!!");
+            };
+          }
+          return deferred.promise;
+        };
+
+        return {
+          open: open,
+          getStudents: getStudents,
+          addStudent: addStudent,
+          editStudent: editStudent,
+          deleteStudent: deleteStudent,
+        };
+      });
+      /*---------------------------------------------------------------------------------------------*/
+      app.controller("AppController", function (
+        $window,
+        indexedDBDataSvc,
+        $scope
+      ) {
+        var self = this;
+        self.students = [];
+
+        self.refreshList = function () {
+          indexedDBDataSvc.getStudents().then(
+            function (data) {
+              self.students = data;
+              recordsCount = data.length;
+              $scope.rowCount = 10;
+            },
+            function (err) {
+              $window.alert(err);
+            }
+          );
+        };
+
+        self.addStudent = function () {
+          indexedDBDataSvc
+            .addStudent(
+              self.first_name,
+              self.last_name,
+              self.phone,
+              self.address,
+              self.city,
+              self.state,
+              self.zip,
+              self.email,
+              self.password,
+              self.Comment
+            )
+            .then(
+              function () {
+                self.refreshList();
+                self.first_name = "";
+                self.last_name = "";
+                self.phone = "";
+                self.address = "";
+                self.city = "";
+                self.state = "";
+                self.zip = "";
+                self.email = "";
+                self.password = "";
+                self.Comment = "";
+              },
+              function (err) {
+                $window.alert(err);
+              }
+            );
+        };
+
+        self.editStudent = function () {
+          indexedDBDataSvc
+            .addStudent(
+              self.id,
+              self.first_name,
+              self.last_name,
+              self.phone,
+              self.address,
+              self.city,
+              self.state,
+              self.zip,
+              self.email,
+              self.password,
+              self.comment
+            )
+            .then(
+              function () {
+                self.refreshList();
+                self.first_name = "";
+                self.last_name = "";
+                self.phone = "";
+                self.address = "";
+                self.city = "";
+                self.state = "";
+                self.zip = "";
+                self.email = "";
+                self.password = "";
+                self.comment = "";
+              },
+              function (err) {
+                $window.alert(err);
+              }
+            );
+        };
+
+        self.deleteStudent = function (id) {
+          indexedDBDataSvc.deleteStudent(id).then(
+            function () {
+              self.refreshList();
+            },
+            function (err) {
+              $window.alert(err);
+            }
+          );
+        };
+
+        self.student = {
+          id: null,
+          first_name: "",
+          last_name: "",
+          phone: "",
+          address: "",
+          city: "",
+          state: "",
+          zip: "",
+          comment: "",
+          email: "",
+          password: "",
+        };
+        self.id = 1;
+        self.submit = function () {
+          if (self.student.id === null) {
+            self.student.id = self.id++;
+            console.log("Saving New Student", self.student);
+            self.students.push(self.student); //Or send to server, we will do it in when handling services
+
+            indexedDBDataSvc
+              .addStudent(
+                self.student.first_name,
+                self.student.last_name,
+                self.student.phone,
+                self.student.address,
+                self.student.city,
+                self.student.state,
+                self.student.zip,
+                self.student.email,
+                self.student.password,
+                self.student.comment
+              )
+              .then(
+                function () {
+                  self.refreshList();
+                  self.first_name = "";
+                  self.last_name = "";
+                  self.phone = "";
+                  self.address = "";
+                  self.city = "";
+                  self.state = "";
+                  self.zip = "";
+                  self.email = "";
+                  self.password = "";
+                  self.comment = "";
+                },
+                function (err) {
+                  $window.alert(err);
+                }
+              );
+          } else {
+            /*-------------------------------------------------------------------------------------------------------*/
+
+            indexedDBDataSvc
+              .editStudent(
+                self.student.id,
+                self.student.first_name,
+                self.student.last_name,
+                self.student.phone,
+                self.student.address,
+                self.student.city,
+                self.student.state,
+                self.student.zip,
+                self.student.email,
+                self.student.password,
+                self.student.comment
+              )
+              .then(
+                function () {
+                  self.refreshList();
+                  self.first_name = "";
+                  self.last_name = "";
+                  self.phone = "";
+                  self.address = "";
+                  self.city = "";
+                  self.state = "";
+                  self.zip = "";
+                  self.email = "";
+                  self.password = "";
+                  self.comment = "";
+                },
+                function (err) {
+                  $window.alert(err);
+                }
+              );
+
+            /*-------------------------------------------------------------------------------------------------------*/
+
+            for (var i = 0; i < self.students.length; i++) {
+              if (self.students[i].id === self.student.id) {
+                self.students[i] = self.student;
+                break;
+              }
+            }
+            console.log("Student updated with id ", self.student.id);
+          }
+          self.reset();
+        };
+
+        self.edit = function (id) {
+          console.log("id to be edited", id);
+          for (var i = 0; i < self.students.length; i++) {
+            if (self.students[i].id === id) {
+              self.student = angular.copy(self.students[i]);
+              break;
+            }
+          }
+        };
+
+        self.remove = function (id) {
+          console.log("id to be deleted", id);
+
+          indexedDBDataSvc.deleteStudent(id).then(
+            function () {
+              self.refreshList();
+            },
+            function (err) {
+              $window.alert(err);
+            }
+          );
+
+          for (var i = 0; i < self.students.length; i++) {
+            if (self.students[i].id === id) {
+              self.students.splice(i, 1);
+              if (self.student.id === id) {
+                //It is shown in form, reset it.
+                self.reset();
+              }
+              break;
+            }
+          }
+        };
+
+        self.reset = function () {
+          self.student = {
+            id: null,
+            password: "",
+            last_name: "",
+            phone: "",
+            address: "",
+            city: "",
+            state: "",
+            zip: "",
+            comment: "",
+            email: "",
+            password: "",
+          };
+          $scope.myForm.$setPristine(); //reset Form
+        };
+
+        function init() {
+          indexedDBDataSvc.open().then(function () {
+            self.refreshList();
+          });
+        }
+
+        $scope.clearFilter = function () {
+          $scope.searching = "";
+          $("#searchTextBox").val("");
+        };
+
+        init();
+      });
+    </script>
+    <script src="counterField.js"></script>
+  </body>
+</html>

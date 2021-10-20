@@ -1,0 +1,232 @@
+body,
+#mainWrapper {
+  height: 70%;
+  background-color: #7a2426;
+  margin-top: 30px;
+  margin-left: 20px;
+  margin-right: 30px;
+}
+
+body,
+.form-control {
+  font-size: 12px !important;
+}
+
+.floatRight {
+  float: right;
+  margin-right: 18px;
+}
+
+.has-error {
+  color: red;
+}
+
+.formcontainer {
+  background-color: rgb(255, 240, 240);
+  padding: 20px;
+}
+
+.tablecontainer {
+  padding-left: 20px;
+}
+
+.generic-container {
+  width: 100%;
+  margin: 5px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  padding: 10px;
+  background-color: #cc092f;
+  border: 3px solid rgb(255, 255, 255);
+  border-radius: 4px;
+  box-shadow: 0 0 30px black;
+}
+
+.custom-width {
+  width: 95px !important;
+}
+
+/* Additional Styles*/
+
+table.table td a {
+  cursor: pointer;
+  display: inline-block;
+  margin: 0 5px;
+  min-width: 24px;
+}
+
+table.table td a.add {
+  color: #27c46b;
+}
+
+table.table td a.edit {
+  color: #ffc107;
+}
+
+table.table td a.delete {
+  color: #e34724;
+}
+
+table.table td i {
+  font-size: 19px;
+}
+
+/*first_name*/
+
+.first_name.ng-valid {
+  background-color: lightgreen;
+}
+
+.first_name.ng-dirty.ng-invalid-required {
+  background-color: red;
+}
+
+.first_name.ng-dirty.ng-invalid-minlength {
+  background-color: yellow;
+}
+
+/*last_name*/
+
+.last_name.ng-valid {
+  background-color: lightgreen;
+}
+
+.last_name.ng-dirty.ng-invalid-required {
+  background-color: red;
+}
+
+.last_name.ng-dirty.ng-invalid-minlength {
+  background-color: yellow;
+}
+
+/*phone*/
+
+.phone.ng-valid {
+  background-color: lightgreen;
+}
+
+.phone.ng-dirty.ng-invalid-required {
+  background-color: red;
+}
+
+.phone.ng-dirty.ng-invalid-minlength {
+  background-color: yellow;
+}
+
+/*address*/
+
+.address.ng-valid {
+  background-color: lightgreen;
+}
+
+.address.ng-dirty.ng-invalid-required {
+  background-color: red;
+}
+
+.address.ng-dirty.ng-invalid-minlength {
+  background-color: yellow;
+}
+
+/*city*/
+
+.city.ng-valid {
+  background-color: lightgreen;
+}
+
+.city.ng-dirty.ng-invalid-required {
+  background-color: red;
+}
+
+.city.ng-dirty.ng-invalid-minlength {
+  background-color: yellow;
+}
+
+/*state*/
+
+.state.ng-valid {
+  background-color: lightgreen;
+}
+
+.state.ng-dirty.ng-invalid-required {
+  background-color: red;
+}
+
+.state.ng-dirty.ng-invalid-minlength {
+  background-color: yellow;
+}
+
+/*zip*/
+
+.zip.ng-valid {
+  background-color: lightgreen;
+}
+
+.zip.ng-dirty.ng-invalid-required {
+  background-color: red;
+}
+
+.zip.ng-dirty.ng-invalid-minlength {
+  background-color: yellow;
+}
+
+/*email*/
+
+.email.ng-valid {
+  background-color: lightgreen;
+}
+
+.email.ng-dirty.ng-invalid-required {
+  background-color: red;
+}
+
+.email.ng-dirty.ng-invalid-email {
+  background-color: yellow;
+}
+
+/*password*/
+
+.password.ng-valid {
+  background-color: lightgreen;
+}
+
+.password.ng-dirty.ng-invalid-required {
+  background-color: red;
+}
+
+.password.ng-dirty.ng-invalid-minlength {
+  background-color: yellow;
+}
+
+.password.ng-dirty.ng-invalid-pattern {
+  background-color: orange;
+}
+
+/*comment*/
+
+.comment.ng-valid {
+  background-color: lightgreen;
+}
+
+.comment.ng-dirty.ng-invalid-required {
+  background-color: red;
+}
+
+.comment.ng-dirty.ng-invalid-minlength {
+  background-color: yellow;
+}
+
+/* Clear button styles
+	--------------------------------------------- */
+
+::-ms-clear {
+  display: none;
+}
+
+.form-control-clear {
+  z-index: 10;
+  pointer-events: auto;
+  cursor: pointer;
+}
+
+/* Custom page CSS (Not required)
+	--------------------------------------------- */
